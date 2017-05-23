@@ -9,7 +9,7 @@ public class Scrapper {
 
     public static void main(String[] args) throws IOException {
 
-        Parser parser = new Parser();
+        Parsing parser = new Parser();
         StringBuilder input = new StringBuilder();
         List<String> keyWords;
         List<String> urls = new ArrayList<String>();
@@ -18,6 +18,7 @@ public class Scrapper {
         DataCommands dataCommands = new DataCommands();
         int totalCharacters = 0;
         Map<String, Integer> keyWordsCounter = new HashMap<>();
+//        Map<String, List<String>> sentencesWithKeyWords;
 
 
         for (int i = 0; i < args.length; i++) {
@@ -58,6 +59,7 @@ public class Scrapper {
             for (char command : commands) {
                 switch (command) {
                     case 'w':
+
                         for (String keyWord : keyWords) {
                             Integer i = keyWordsCounter.get(keyWord);
                             Integer j = dataCommands.countWordOccurencesByURL(link, keyWord);
@@ -66,13 +68,28 @@ public class Scrapper {
                             System.out.println(keyWord + ": " + j);
                         }
                         break;
+
                     case 'c':
+
                         int i = dataCommands.countNumberOfCharactesByURL(link);
                         System.out.println("Number of charactes: " + i);
                         totalCharacters += i;
                         break;
+
+                    case 'e':
+
+                        for (String keyWord : keyWords) {
+                            System.out.println(keyWord + " is in sentences: ");
+                            int k = 1;
+                            for(String sentence : dataCommands.getSentencesContainingWord(link, keyWord)){
+                                System.out.println(k + ") " + sentence);
+                                k++;
+                            };
+                        }
+                        break;
                 }
             }
+            System.out.println("--------------");
 
         }
 

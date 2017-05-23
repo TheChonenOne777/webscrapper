@@ -1,4 +1,4 @@
-https://habrahabr.ru/post/66593/
+https://docs.oracle.com/javase/tutorial/essential/concurrency/locksync.html
 
 blablabla
 
