@@ -2,12 +2,15 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * <p>This class implements interface Parsing.</p>
+ * <p>It has common for all methods Pattern and Matcher. Hence uses reqular expressions
+ * to exclude data from input string</p>
+ */
 
 public class Parser implements Parsing {
 
@@ -65,8 +68,8 @@ public class Parser implements Parsing {
         return urlList;
     }
 
-    public List<String> getKeywords(String str) {
-        List<String> outputList = new ArrayList<String>(Arrays.asList(str.split("\\s*,\\s*")));
+    public Set<String> getKeywords(String str) {
+        Set<String> outputList = new HashSet<String>(Arrays.asList(str.split("\\s*,\\s*")));
 
         outputList.removeAll(Arrays.asList("", null));
 

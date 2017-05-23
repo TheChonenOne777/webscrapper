@@ -6,7 +6,7 @@ This is a console web scraper utility which:
 o   (must) web resources URL or path to plain text file containing a list of URLs
 o   (must) data command(s)
 o   (must) word (or list of words with “,” delimiter)
-o   (nice to have) output verbosity flag,  if on then the output should contains information about time spend on data scraping and data processing (-v)
+o   (nice to have) output verbosity flag,  if on then the output should contains information about time spend on data scraping and data processing (-v) - in next version
 -          supports the following data processing commands:
 o   (must) count number of provided word(s) occurrence on webpage(s). (-w)
 o   (must) count number of characters of each web page (-c)
